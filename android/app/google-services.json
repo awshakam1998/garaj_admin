@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "805323969319",
+    "project_id": "garaj-65c56",
+    "storage_bucket": "garaj-65c56.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:805323969319:android:a468a5ea3e64cd43f94f02",
+        "android_client_info": {
+          "package_name": "com.example.garaj_admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "805323969319-lhupv84q76qruc9b6ae488c7gopvi6ed.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-uETdUX342tOveo-iRN0viRuwVbx8rVk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "805323969319-lhupv84q76qruc9b6ae488c7gopvi6ed.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "805323969319-nu36j6soas3e0g2hpo88h2l7df7h5jhm.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.garaj"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
