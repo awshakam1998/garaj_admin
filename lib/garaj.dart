@@ -39,8 +39,8 @@ class Garaj {
 
   Map<String, dynamic> toJson() => {
     "available": available,
-    "capacity": id,
-    "id": capacity,
+    "capacity": capacity,
+    "id": id,
     "lat": lat,
     "lng": lng,
     "managerId": managerId,

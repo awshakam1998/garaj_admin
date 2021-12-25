@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'dart:developer';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:garaj_admin/garaj.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -81,7 +80,7 @@ class ParksManagerScreenState extends State<ParksManagerScreen> {
           ],
         ),
         body: isLoad
-            ? CircularProgressIndicator()
+            ? Center(child: CircularProgressIndicator())
             : SafeArea(
                 child: Stack(
                   children: [
@@ -128,19 +127,7 @@ class ParksManagerScreenState extends State<ParksManagerScreen> {
                             'Add Park',
                             style: TextStyle(color: Colors.white),
                           ),
-                          onLongPress: () {
-                            CollectionReference parking = FirebaseFirestore
-                                .instance
-                                .collection('parking');
-                            parking
-                                .add(garajFromJson(
-                                    json.decode(json.encode(garajs))))
-                                .then((value) {
-                              print(value);
-                            }).onError((error, stackTrace) {
-                              print('err: $error');
-                            });
-                          },
+
                           onPressed: () {
                             addPark(context);
                           },
@@ -179,13 +166,13 @@ class ParksManagerScreenState extends State<ParksManagerScreen> {
               lat: currentPosition.target.latitude,
               lng: currentPosition.target.longitude,
               managerId: '');
-          parkingRef.doc(garaj.id).set(garaj).then((value) {
-            addMarker(garaj);
-            Navigator.pop(context);
+          parkingRef.doc(garaj.id).set(garaj.toJson()).then((value) {
+
           }).onError((error, stackTrace){
             log('$error');
           });
-
+          addMarker(garaj);
+          Navigator.pop(context);
         }
       },
     );
