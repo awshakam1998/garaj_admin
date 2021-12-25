@@ -12,14 +12,17 @@ class Garaj {
   Garaj({
     this.available,
     this.capacity,
-    this.latlng,
     this.managerId,
-    this.name,this.id
+    this.name,this.id,
+    this.lat,
+    this.lng
   });
 
   int? available;
   int? capacity;
-  String? latlng;
+
+  double? lat;
+  double? lng;
   String? managerId;
   String? name;
   String? id;
@@ -27,7 +30,8 @@ class Garaj {
   factory Garaj.fromJson(Map<String, dynamic> json) => Garaj(
     available: json["available"],
     capacity: json["capacity"],
-    latlng: json["latlng"],
+    lat: json["lat"],
+    lng: json["lng"],
     managerId: json["managerId"],
     name: json["name"],
     id: json["id"],
@@ -37,7 +41,8 @@ class Garaj {
     "available": available,
     "capacity": id,
     "id": capacity,
-    "latlng": latlng,
+    "lat": lat,
+    "lng": lng,
     "managerId": managerId,
     "name": name,
   };
