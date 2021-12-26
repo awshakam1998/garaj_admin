@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:garaj_admin/login_screen.dart';
 import 'package:garaj_admin/parks_manager_screen.dart';
 
 bool shouldUseFirestoreEmulator = false;
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'Parks Manager',
-      home: ParksManagerScreen(),
+      home: LoginScreen(),
     );
   }
 }
