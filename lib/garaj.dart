@@ -2,12 +2,12 @@
 
 import 'dart:convert';
 
-List<Garaj> garajFromJson(String str) => List<Garaj>.from(json.decode(str).map((x) => Garaj.fromJson(x)));
+List<Park> garajFromJson(String str) => List<Park>.from(json.decode(str).map((x) => Park.fromJson(x)));
 
-String garajToJson(List<Garaj> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+String garajToJson(List<Park> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
-class Garaj {
-  Garaj({
+class Park {
+  Park({
     this.available,
     this.capacity,
     this.managerId,
@@ -25,7 +25,7 @@ class Garaj {
   String? name;
   String? id;
 
-  factory Garaj.fromJson(Map<String, dynamic> json) => Garaj(
+  factory Park.fromJson(Map<String, dynamic> json) => Park(
     available: json["available"],
     capacity: json["capacity"],
     lat: json["lat"],

@@ -10,8 +10,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  String message = '';
 
-  String message='';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,44 +19,66 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children:  [
-              const Text('Parks Manager',style:  TextStyle(fontSize: 30,fontWeight: FontWeight.bold,color: Colors.red),),
-              const SizedBox(height: 20,),
+            children: [
+              const Text(
+                'Parks Manager',
+                style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.red),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
               Row(
                 children: const [
                   Padding(
                     padding: EdgeInsets.all(8.0),
-                    child: Text('Enter the key to login!',style: TextStyle(fontSize: 24,fontWeight: FontWeight.w600),),
+                    child: Text(
+                      'Enter the key to login!',
+                      style:
+                          TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+                    ),
                   ),
                 ],
               ),
-               Padding(
+              Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextField(
                   onChanged: (value) {
-                    if(value=="admin123"){
-                      Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => const ParksManagerScreen()), (route) => false);
-                    }else if(value.isEmpty){
+                    if (value == "admin123") {
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const ParksManagerScreen()),
+                          (route) => false);
+                    } else if (value.isEmpty) {
                       setState(() {
-                        message='';
+                        message = '';
                       });
-                    }else{
+                    } else {
                       setState(() {
-                        message='Invalid Key!';
+                        message = 'Invalid Key!';
                       });
                     }
                   },
                   decoration: const InputDecoration(
-                    border:  OutlineInputBorder(),
-                    label:  Text('Key'),
+                    border: OutlineInputBorder(),
+                    label: Text('Key'),
                   ),
                 ),
               ),
               Row(
-                children:  [
+                children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Text(message,style: const TextStyle(fontSize: 18,fontWeight: FontWeight.w600,color: Colors.red),),
+                    child: Text(
+                      message,
+                      style: const TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.red),
+                    ),
                   ),
                 ],
               ),
